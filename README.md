@@ -21,6 +21,7 @@ Each skill encodes a complete expert workflow — trigger conditions, step-by-st
 | **bug-hunter** | 根因定位：复现→二分→单一假设→最小修复→回归测试，禁止 shotgun 修补 | 调试、修 bug |
 | **feature-spec** | 写码前一页纸方案：范围、接口契约、边界情况、测试场景 | 做新功能 |
 | **commit-craft** | 拆逻辑提交、防密钥泄漏、写讲清 why 的提交信息 | 提交代码 |
+| **changelog-release** | 按契约变化算 semver + 用户视角 Release Notes | 发版、写 Changelog |
 
 ```bash
 # 生态标准安装（推荐——works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode and 70+ agents）
@@ -42,7 +43,7 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 
 ---
 
-## Pro 完整包（15 个）/ Full Pro Pack
+## Pro 完整包（9 个付费 + 6 个免费 = 15 个）/ Full Pro Pack
 
 | Skill | 一句话 |
 |---|---|
@@ -53,7 +54,6 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 | ai-code-reviewer | AI 生成代码八类缺陷核对（幻觉 API、行为漂移、过度工程） |
 | api-designer | 不会破坏兼容的 API 设计：错误契约、幂等、游标分页 |
 | db-migration-safe | 零停机迁移：expand→migrate→contract + 锁表风险评估 |
-| changelog-release | 按契约变化算 semver + 用户视角 Release Notes |
 | dep-guardian | 风险分级依赖升级 + 新依赖准入审查 |
 | legacy-explainer | 数据流式代码解释，结论带 file:line 出处 |
 
