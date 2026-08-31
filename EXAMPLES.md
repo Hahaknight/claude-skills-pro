@@ -122,5 +122,20 @@ Verdict: REQUEST CHANGES
 
 ---
 
-**6 个免费样品** = 上面 pr-reviewer / bug-hunter / feature-spec / test-forge / commit-craft / changelog-release 的完整版。
-**Pro 包**（9 个付费 + 手册 + 安装脚本）：见 [README](README.md)。
+## ai-code-reviewer
+
+> 输入：`review 这段 AI 生成的代码，能上线吗`
+
+```
+请求 vs 交付：要求=给 checkout 调用加 5s 超时；实际=超时 + 重试×3 + 熔断 flag + TIMEOUT_CONFIG 环境变量
+🔴 幻觉 API：from datetime import UTC —— 该名字 3.13 才存在，当前 3.11 → 改 timezone.utc（已核对 stdlib 源）
+🔴 发明需求：重试/熔断/TIMEOUT_CONFIG 均不在请求内 → DELETE
+⚠️ 行为漂移：顺手把错误信息从 code 改成 message 字段 —— 下游解析会挂 → 还原
+✅ 已执行验证：超时路径用 mock server 实测 5.01s 触发
+结论：修 2 处、删 3 处后可上。未验证项：无
+```
+
+---
+
+**7 个免费样品** = 上面 pr-reviewer / bug-hunter / feature-spec / test-forge / commit-craft / changelog-release / ai-code-reviewer 的完整版。
+**Pro 包**（8 个付费 + 手册 + 安装脚本）：见 [README](README.md)。
