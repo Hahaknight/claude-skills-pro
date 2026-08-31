@@ -65,7 +65,7 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 
 ### 获取 Pro 包 / Get the Pro Pack
 
-🚚 自动支付上线准备中——**点个 ⭐ 并[订阅发布](../../releases)**，上线当天会收到通知。**现在就能买**：在 [issue #1](../../issues/1) 评论「购买 + 中文/英文」，24 小时内回复付款方式并发货（¥19.9 / $9.9）。🎁 **前 5 份评审拷贝免费**：在 [issue #1](../../issues/1) 评论你的使用场景，换完整 Pro 包 + 一句真实反馈。
+🚚 **完整包已在 [Releases v1.0](../../releases/tag/v1.0) 上线**（密码保护，购买后发送解压密码）。**现在就能买**：在 [issue #1](../../issues/1) 评论「购买 + 中文/英文」，24 小时内回复付款方式并发密码（¥19.9 / $9.9）。🎁 **前 5 份评审拷贝免费**：在 [issue #1](../../issues/1) 评论你的使用场景，换完整 Pro 包 + 一句真实反馈。
 
 🚀 Shipping now — **star the repo and watch [releases](../../releases)** to get notified. **Buy today**: comment "buy + CN/EN" in [issue #1](../../issues/1) and we reply with payment options and deliver within 24h (¥19.9 / $9.9).
 
