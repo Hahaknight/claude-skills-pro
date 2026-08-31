@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Skills Pro — 15 个资深工程师工作流技能包 | Claude Code</title>
+<meta name="description" content="把 Claude Code 变成资深工程搭档：15 个固化专家工作流的 skills——代码审查、测试、调试、安全、重构、性能、API 设计、零停机迁移。附中文实战手册。">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--max:960px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+header{padding:72px 0 40px;text-align:center}
+h1{font-size:clamp(28px,5vw,44px);letter-spacing:-.5px;margin-bottom:16px}
+.sub{color:var(--muted);font-size:18px;max-width:640px;margin:0 auto 8px}
+.pill{display:inline-block;margin-top:20px;padding:8px 20px;border:1px solid var(--border);border-radius:99px;color:var(--green);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:40px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.card h3{font-size:16px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14px}
+.tag{float:right;font-size:11px;color:var(--green);border:1px solid var(--green);border-radius:6px;padding:0 8px;opacity:.9}
+.tag.pro{color:#d29922;border-color:#d29922}
+section{padding:32px 0}
+h2{font-size:26px;margin-bottom:20px;text-align:center}
+.cta{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--border);border-radius:16px;padding:40px;text-align:center;margin:40px 0 60px}
+.price{font-size:40px;font-weight:700;margin:8px 0}
+.price small{color:var(--muted);font-size:16px;font-weight:400}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px 36px;border-radius:10px;margin:16px 8px 0;font-size:16px}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+ul.feats{list-style:none;max-width:520px;margin:20px auto;text-align:left}
+ul.feats li{padding:6px 0 6px 28px;position:relative;color:var(--muted)}
+ul.feats li::before{content:"✓";position:absolute;left:0;color:var(--green)}
+footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:13px;text-align:center}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header class="wrap">
+<h1>Claude Skills Pro</h1>
+<p class="sub">把 Claude Code 从「聊天助手」变成「资深工程搭档」——15 个固化了专家工作流的技能包，自动在正确的时机接管正确的事。</p>
+<span class="pill">5 个免费样品已开源 · MIT</span>
+</header>
+
+<div class="wrap">
+<section>
+<h2>15 个技能，覆盖工程师的一天</h2>
+<div class="grid">
+<div class="card"><span class="tag">FREE</span><h3>pr-reviewer · 代码审查</h3><p>七维度系统审查，只报真实问题，blocker/should-fix/nit 分级，绝不盖章放行。</p></div>
+<div class="card"><span class="tag">FREE</span><h3>test-forge · 测试锻造</h3><p>边界、失败路径、变异自检——生成能抓住真 bug 的测试，不是行为艺术。</p></div>
+<div class="card"><span class="tag">FREE</span><h3>bug-hunter · 根因调试</h3><p>复现→二分→单一假设→最小修复→回归测试。禁止 shotgun 修补。</p></div>
+<div class="card"><span class="tag">FREE</span><h3>feature-spec · 方案先行</h3><p>写码前一页纸：范围、契约、边界情况、测试场景。5 分钟省 5 小时返工。</p></div>
+<div class="card"><span class="tag">FREE</span><h3>commit-craft · 提交工艺</h3><p>拆逻辑提交、扫密钥泄漏、写讲清 why 的提交信息。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>security-audit · 安全审查</h3><p>从入口点和信任边界出发的真实攻击面审查，不是背 OWASP 名词。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>refactor-surgeon · 安全重构</h3><p>行为保持铁律：先特征测试，小步提交，测试挂了先回退。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>perf-profiler · 性能优化</h3><p>先测量后动手，每个优化结论必须带 before/after 数字。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>codebase-onboarding · 项目上手</h3><p>分钟级建立心智模型 + 「加 X 应该改哪里」速查表。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>ai-code-reviewer · AI 代码核查</h3><p>幻觉 API、行为漂移、过度工程——AI 代码的八类特有缺陷逐项核对。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>api-designer · API 设计</h3><p>错误契约、幂等、游标分页、无破坏演进——为消费者设计。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>db-migration-safe · 零停机迁移</h3><p>expand→migrate→contract 三步法 + 大表锁风险评估。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>changelog-release · 发版</h3><p>按契约变化算 semver，写用户视角的 Release Notes。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>dep-guardian · 依赖守卫</h3><p>风险分级升级 + 新依赖准入审查（活跃度/体积/协议）。</p></div>
+<div class="card"><span class="tag pro">PRO</span><h3>legacy-explainer · 代码解释</h3><p>数据流追踪式解释，每条结论带 file:line 出处，推断与事实分开标注。</p></div>
+</div>
+</section>
+
+<section class="cta">
+<h2>Pro 完整包</h2>
+<ul class="feats">
+<li>全部 15 个 skills（含 10 个 Pro 专属）</li>
+<li>📖《Claude Code 中文实战手册》——黄金工作流、提问方式、避坑指南</li>
+<li>⚡ 一键安装脚本（bash + PowerShell）</li>
+<li>🏢 团队部署方案：提交进仓库，全团队规范自动对齐</li>
+<li>🔄 版本内更新</li>
+</ul>
+<div class="price">¥19.9 <small>/ 中文版</small> &nbsp;·&nbsp; $9.9 <small>/ EN</small></div>
+<p style="color:var(--muted);font-size:14px">🚚 上线准备中 · 去 GitHub 点 ⭐ 订阅发布，上线即通知</p>
+<a class="btn" href="https://github.com/Hahaknight/claude-skills-pro">GitHub 免费样品</a>
+<a class="btn ghost" href="https://github.com/Hahaknight/claude-skills-pro/issues/1">投票想要哪个版本 →</a>
+</section>
+</div>
+
+<footer class="wrap">
+Claude Skills Pro · 由工程师工作流固化而成 · <a href="https://github.com/Hahaknight/claude-skills-pro">GitHub</a><br>
+Skills 是 markdown 文件，安装即用，无任何外部依赖与数据上传。
+</footer>
+</body>
+</html>
