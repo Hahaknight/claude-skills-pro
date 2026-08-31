@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Claude Code Practical Handbook — Free Sample: Ch.2 How Skills Work + Ch.7 Scenario Lookup</title>
+<link rel="canonical" href="https://hahaknight.github.io/claude-skills-pro/manual-sample-en.html">
+<meta name="description" content="What Agent Skills actually are (and why they beat prompts and CLAUDE.md), plus a 15-row lookup table: stuck in situation X → say this → this skill fires. Full handbook: 11 chapters, $9.9.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Claude Code Practical Handbook — Free Sample">
+<meta property="og:description" content="Ch.2: how the skill trigger mechanism works in 3 minutes + Ch.7: the 15-row 'stuck in X, say this' lookup table.">
+<meta property="og:image" content="https://hahaknight.github.io/claude-skills-pro/og-image.png">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--max:820px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","Inter",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
+.wrap{max-width:var(--max);margin:0 auto;padding:48px 24px 72px}
+.free{display:inline-block;margin-bottom:14px;padding:5px 16px;border:1px solid var(--green);border-radius:99px;color:var(--green);font-size:13px}
+h1{font-size:clamp(24px,4vw,34px);letter-spacing:-.4px;margin-bottom:8px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:28px}
+h2{font-size:21px;margin:44px 0 14px;padding-top:24px;border-top:1px solid var(--border)}
+h2:first-of-type{border-top:none}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:var(--card);color:var(--text)}
+td{color:var(--muted)} td:first-child{color:var(--text)}
+code{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:1px 7px;font-size:.9em;font-family:Consolas,monospace}
+blockquote{border-left:3px solid var(--accent);padding:6px 18px;margin:18px 0;background:var(--card);border-radius:0 8px 8px 0}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin:20px 0}
+.toc ol{margin:8px 0 4px 20px}
+.toc li{padding:3px 0;color:var(--muted)}
+.toc li em{color:var(--green);font-style:normal;font-size:12px}
+.cta{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--border);border-radius:14px;padding:30px;text-align:center;margin-top:44px}
+.price{font-size:30px;font-weight:700;margin:6px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 30px;border-radius:9px;margin:12px 6px 0;font-size:15px}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+footer{border-top:1px solid var(--border);margin-top:52px;padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="free">FREE SAMPLE · chapters 2 + 7</span>
+<h1>The Claude Code Practical Handbook</h1>
+<p class="sub">Chapter 2 and Chapter 7 in full. The complete handbook is 11 chapters, $9.9, delivered with the Pro pack.</p>
+
+<h2>Ch. 2 · What skills actually are (3 minutes, mechanism included)</h2>
+<p>A skill is a folder with an instruction file. The <code>SKILL.md</code> has two parts:</p>
+<p>· <strong>Frontmatter (machine-read)</strong>: <code>name</code> + <code>description</code>. Claude <strong>never loads the body</strong> — it reads every skill's <code>description</code> to decide "do I need this one right now?"<br>
+· <strong>Body (read when working)</strong>: the workflow, output format, anti-patterns.</p>
+<p>Which leads to the key fact: <strong>the <code>description</code> is a trigger surface, not documentation</strong>. A vague one ("helps improve code quality") sleeps forever. A precise one ("MUST USE when the user asks to review a PR / review these changes / is this safe to ship") hits every time.</p>
+<p>Why the three old approaches lose:</p>
+<table>
+<tr><th>Old way</th><th>Problem</th><th>How skills fix it</th></tr>
+<tr><td>Type the instructions every time</td><td>Repetition, version drift</td><td>Write once, fires forever</td></tr>
+<tr><td>Put it in CLAUDE.md</td><td>Always in context, eats tokens, rules interfere</td><td>Loaded on demand</td></tr>
+<tr><td>MCP tools</td><td>Gives <strong>capability</strong> (new hands)</td><td>Skills give <strong>method</strong> (a new brain)</td></tr>
+</table>
+<blockquote>One sentence: <strong>skills turn "the senior habits you keep re-explaining" into an asset.</strong></blockquote>
+
+<h2>Ch. 7 · Scenario lookup: "I'm stuck in X — which one do I use?"</h2>
+<table>
+<tr><th>Your situation</th><th>Say this</th><th>Skill that fires</th></tr>
+<tr><td>Starting a new feature</td><td>"Spec first, then code"</td><td>feature-spec</td></tr>
+<tr><td>Code done, afraid to commit</td><td>"Review these changes"</td><td>pr-reviewer</td></tr>
+<tr><td>Production is on fire</td><td>"Reproduce and find the root cause"</td><td>bug-hunter</td></tr>
+<tr><td>About to commit</td><td>"Split into logical commits, scan for secrets"</td><td>commit-craft</td></tr>
+<tr><td>Test coverage feels thin</td><td>"Write tests that catch real bugs"</td><td>test-forge</td></tr>
+<tr><td>First day on a new codebase</td><td>"Onboard me to this project, build an index"</td><td>codebase-onboarding</td></tr>
+<tr><td>Inherited unreadable legacy code</td><td>"Trace the data flow and explain it, cite file:line"</td><td>legacy-explainer</td></tr>
+<tr><td>Changing the database</td><td>"Big-table schema change, expand-contract"</td><td>db-migration-safe</td></tr>
+<tr><td>Cutting a release</td><td>"Version by contract changes, write the notes"</td><td>changelog-release</td></tr>
+<tr><td>Performance is bad</td><td>"Profile and find the hotspots first"</td><td>perf-profiler</td></tr>
+<tr><td>Upgrading a framework</td><td>"Follow the official upgrade guide, check deprecated APIs"</td><td>dep-guardian</td></tr>
+<tr><td>The AI wrote a big pile</td><td>"Check this AI code against the eight defect classes"</td><td>ai-code-reviewer</td></tr>
+<tr><td>Designing a new API</td><td>"Design an API that won't break consumers"</td><td>api-designer</td></tr>
+<tr><td>Need to refactor</td><td>"Characterization tests first, then small steps"</td><td>refactor-surgeon</td></tr>
+<tr><td>Nervous before shipping</td><td>"Real attack-surface security audit"</td><td>security-audit</td></tr>
+</table>
+
+<div class="toc">
+<strong>📖 Full table of contents (11 chapters) — beyond this page you also get:</strong>
+<ol>
+<li>Set the pack up in five minutes <em>free to read</em></li>
+<li>What skills are (mechanism) <em>← this page, free</em></li>
+<li><strong>The golden workflows (the pack's best combos, with real dialogue examples)</strong></li>
+<li><strong>Ten ways to ask that double output quality</strong></li>
+<li><strong>Common traps and their fixes (8)</strong></li>
+<li>Team usage: commit skills to the repo, alignment becomes automatic</li>
+<li>Scenario lookup table <em>← this page, free</em></li>
+<li><strong>Deep dive: the eight defect classes of AI-generated code</strong></li>
+<li><strong>Deep dive: writing your own skill (the description formula + three pre-release tests)</strong></li>
+<li>Quick reference</li>
+<li>Licensing and updates</li>
+</ol>
+</div>
+
+<div class="cta">
+<div class="price">$9.90 <span style="font-size:15px;color:var(--muted);font-weight:400">/ EN edition · includes the full 15-skill pack</span></div>
+<p style="color:var(--muted);font-size:14px">Comment "buy + EN" in <a href="https://github.com/Hahaknight/claude-skills-pro/issues/1">issue #1</a> — we reply with payment options and deliver within 24h.</p>
+<a class="btn" href="https://github.com/Hahaknight/claude-skills-pro/issues/1">Get the full handbook →</a>
+<a class="btn ghost" href="https://github.com/Hahaknight/claude-skills-pro">Try the 7 free skills →</a>
+</div>
+
+<footer>The Claude Code Practical Handbook · sample page · <a href="index.html">Claude Skills Pro home</a> · markdown source ships with the Pro pack</footer>
+</div>
+</body>
+</html>
