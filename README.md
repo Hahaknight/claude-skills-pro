@@ -22,6 +22,7 @@ Each skill encodes a complete expert workflow — trigger conditions, step-by-st
 | **feature-spec** | 写码前一页纸方案：范围、接口契约、边界情况、测试场景 | 做新功能 |
 | **commit-craft** | 拆逻辑提交、防密钥泄漏、写讲清 why 的提交信息 | 提交代码 |
 | **changelog-release** | 按契约变化算 semver + 用户视角 Release Notes | 发版、写 Changelog |
+| **ai-code-reviewer** | AI 生成代码八类缺陷核对（幻觉 API、行为漂移、过度工程） | review AI 写的代码 |
 
 ```bash
 # 生态标准安装（推荐——works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode and 70+ agents）
@@ -43,7 +44,7 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 
 ---
 
-## Pro 完整包（9 个付费 + 6 个免费 = 15 个）/ Full Pro Pack
+## Pro 完整包（8 个付费 + 7 个免费 = 15 个）/ Full Pro Pack
 
 | Skill | 一句话 |
 |---|---|
@@ -51,7 +52,6 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 | refactor-surgeon | 行为保持式重构：先特征测试、小步提交、等价验证 |
 | perf-profiler | 先测量后优化：profile→热点→修→复测，每个结论带数字 |
 | codebase-onboarding | 快速建立项目心智模型 + "加 X 改哪里"速查表 |
-| ai-code-reviewer | AI 生成代码八类缺陷核对（幻觉 API、行为漂移、过度工程） |
 | api-designer | 不会破坏兼容的 API 设计：错误契约、幂等、游标分页 |
 | db-migration-safe | 零停机迁移：expand→migrate→contract + 锁表风险评估 |
 | dep-guardian | 风险分级依赖升级 + 新依赖准入审查 |
