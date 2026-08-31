@@ -28,7 +28,7 @@ Each skill encodes a complete expert workflow — trigger conditions, step-by-st
 # 生态标准安装（推荐——works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode and 75+ agents）
 npx skills add Hahaknight/claude-skills-pro
 
-# 装进其他 agent：--agent codex / gemini-cli / qwen-code / goose / crush / cursor …
+# 装进其他 agent：--agent codex / gemini-cli / qwen-code / goose / crush / opencode / cursor …（前 6 个 + opencode 共 7 个已实测）
 npx skills add Hahaknight/claude-skills-pro --agent gemini-cli
 
 # 或手动安装（macOS/Linux/Git Bash）
