@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Write Claude Code Skills That Actually Fire — A Practical Guide (2026)</title>
+<meta name="description" content="A practical guide to writing high-quality Claude Code skills: how the description triggers loading, the frontmatter formula, the golden body structure (Workflow/Output/Anti-patterns), 7 common mistakes with fixes, and how to test. Includes a real, copyable example.">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--max:820px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+header{padding:64px 0 24px}
+h1{font-size:clamp(26px,4.5vw,38px);letter-spacing:-.5px;margin-bottom:12px}
+.sub{color:var(--muted);font-size:17px}
+section{padding:28px 0}
+h2{font-size:22px;margin-bottom:14px;padding-top:8px;border-top:1px solid var(--border)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0}
+p.m,li{color:var(--muted)}
+ul,ol{padding-left:24px;margin:10px 0}
+li{margin:6px 0}
+pre{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;overflow-x:auto;font-size:13.5px;line-height:1.6;margin:14px 0}
+code{font-family:Consolas,"Courier New",monospace}
+p code,li code,td code{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:13px;color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+.bad{color:#f85149}.good{color:var(--green)}
+.cta{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;margin:40px 0 24px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 30px;border-radius:10px;margin:12px 6px 0;font-size:15px}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+a{color:var(--accent)}
+.tip{border-left:3px solid var(--green);background:var(--card);padding:10px 16px;border-radius:0 10px 10px 0;margin:14px 0;font-size:14.5px}
+</style>
+</head>
+<body>
+<header class="wrap">
+<h1>How to Write Claude Code Skills That Actually Fire</h1>
+<p class="sub">A skill is a write-once, always-on capability asset for Claude Code. This guide covers how skills get triggered, how to write one that works, and the 7 failure modes that make most skills sleep forever.</p>
+</header>
+
+<div class="wrap">
+
+<section>
+<h2>1. What a skill actually is (30 seconds)</h2>
+<p>A skill is a directory with instructions, centered on a single <code>SKILL.md</code> file. How it differs from the three old ways:</p>
+<table>
+<tr><th>Approach</th><th>Problem</th><th>Skills solve it by</th></tr>
+<tr><td>Typing instructions every time</td><td>Same request repeated dozens of times, drifting versions</td><td>Write once, effective forever</td></tr>
+<tr><td>Putting rules in CLAUDE.md</td><td>All rules resident in context, interfering, burning tokens</td><td>Loading on demand</td></tr>
+<tr><td>MCP tools</td><td>Adds <i>capability</i>, not <i>method</i></td><td>A skill is the method: steps, standards, prohibitions</td></tr>
+</table>
+<p class="m">One line: MCP gives Claude new hands; a skill teaches it a new brain.</p>
+</section>
+
+<section>
+<h2>2. Anatomy of a SKILL.md</h2>
+<pre><code>my-skill/
+└── SKILL.md</code></pre>
+<p>Two parts: <b>frontmatter (machine-read)</b> + <b>body (read when Claude works)</b>.</p>
+<pre><code>---
+name: code-review-checklist
+description: Seven-dimension systematic review of code changes. MUST USE when the user asks to review code, review a PR, check a diff, or says "does this look right".
+---
+
+# Code Review Checklist
+## Workflow
+1. Read the full diff first; understand intent before finding faults
+2. Check seven dimensions in order: correctness / security / performance / contracts / error handling / tests / maintainability
+3. Every finding must carry file:line and a concrete fix
+## Output
+Grouped as Blockers / Should-fix / Nits, ending with a Verdict
+## Anti-patterns
+- Never rubber-stamp with "Looks good"
+- Never let style nits occupy a Blocker slot</code></pre>
+</section>
+
+<section>
+<h2>3. The line that decides everything: description</h2>
+<p>Claude does <b>not</b> load your skill body by default. It reads each skill's <code>description</code> to decide whether to use it <i>right now</i>. A weak description means your beautiful body text sleeps forever.</p>
+<h3>The formula</h3>
+<pre><code>description: [what it does] + [MUST USE when trigger scenarios] + [the exact words users say]</code></pre>
+<h3>Side by side</h3>
+<table>
+<tr><th>❌ Sleeps forever</th><th>✅ Fires</th></tr>
+<tr><td><code>Helps with code quality</code></td><td><code>Seven-dimension review of code changes. MUST USE when the user asks to review, check a PR, look at a diff, or asks "is this code okay"</code></td></tr>
+<tr><td><code>Git commit helper</code></td><td><code>Split logical commits with conventional messages. MUST USE when the user commits code, writes a commit, or says "commit this"</code></td></tr>
+</table>
+<div class="tip">Write the user's <b>literal phrasing</b>. Nobody says "please optimize my commit craftsmanship" — they say "commit this". Bilingual users? Put both languages' keywords in.</div>
+</section>
+
+<section>
+<h2>4. The golden body structure</h2>
+<ol>
+<li><b>Workflow</b> — numbered steps. Claude follows numbered steps with far higher consistency than prose.</li>
+<li><b>Output</b> — dictate the output shape (ranking / table / required fields). Dictating the shape sets a quality floor.</li>
+<li><b>Anti-patterns</b> — prohibitions. <b>The section most people skip and the highest-leverage one</b>: models obey "never do X" extremely well because it turns fuzzy "be good" into a decidable rule.</li>
+</ol>
+<div class="tip">"Never approve with only LGTM" beats "be thorough" by an order of magnitude.</div>
+</section>
+
+<section>
+<h2>5. The seven common mistakes</h2>
+<table>
+<tr><th>#</th><th>Mistake</th><th>Fix</th></tr>
+<tr><td>1</td><td class="bad">Vague description ("improve coding")</td><td class="good">Apply the §3 formula; include user phrasing</td></tr>
+<tr><td>2</td><td class="bad">One skill does five jobs</td><td class="good">Split it. Narrower trigger = higher hit rate</td></tr>
+<tr><td>3</td><td class="bad">Body is a prompt dump, no steps</td><td class="good">Convert to a numbered Workflow</td></tr>
+<tr><td>4</td><td class="bad">No output format contract</td><td class="good">Require ranking/tables/fields</td></tr>
+<tr><td>5</td><td class="bad">No Anti-patterns section</td><td class="good">Write at least 2-3 hard prohibitions</td></tr>
+<tr><td>6</td><td class="bad">Keywords in one language only</td><td class="good">Both languages (the same person says "review" and "审查")</td></tr>
+<tr><td>7</td><td class="bad">Shipping untested</td><td class="good">Next section: three test cases</td></tr>
+</table>
+</section>
+
+<section>
+<h2>6. How to test: three cases</h2>
+<ol>
+<li><b>Trigger test</b> — in a fresh session, make the request using the user's literal phrasing (e.g. <code>take a look at my changes, anything wrong?</code>). Skill doesn't load → rewrite the description.</li>
+<li><b>Negative test</b> — say something adjacent that should NOT trigger ("build me a new feature") and confirm it stays quiet. False fires are worse than misses.</li>
+<li><b>Quality test</b> — plant a bug (say, a missing idempotency check) and see if the skill's Workflow catches it. If not, the steps aren't specific enough.</li>
+</ol>
+</section>
+
+<section>
+<h2>7. Where to install</h2>
+<pre><code># User-level (available in every project)
+my-skill/SKILL.md  →  ~/.claude/skills/my-skill/SKILL.md
+
+# Project-level (travels with the repo, shared with the team)
+my-skill/SKILL.md  →  &lt;repo&gt;/.claude/skills/my-skill/SKILL.md</code></pre>
+<p class="m">Project-level is the team-alignment play: the skill enters the repo, and every teammate's Claude syncs automatically.</p>
+</section>
+
+<section>
+<h2>8. Want working examples?</h2>
+<p>These principles come from a 15-skill engineering pack — <b>pr-reviewer / bug-hunter / test-forge / feature-spec / commit-craft</b> are free under MIT and work as copyable templates:</p>
+<div class="cta">
+<p><b>Claude Skills Pro</b> — 15 skills encoding staff-engineer workflows</p>
+<a class="btn" href="https://github.com/Hahaknight/claude-skills-pro">Free samples on GitHub (MIT)</a>
+<a class="btn ghost" href="./">Full catalog →</a>
+</div>
+</section>
+
+</div>
+<footer class="wrap">Claude Skills Pro · <a href="https://github.com/Hahaknight/claude-skills-pro">github.com/Hahaknight/claude-skills-pro</a></footer>
+</body>
+</html>
