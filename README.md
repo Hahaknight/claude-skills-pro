@@ -23,8 +23,11 @@ Each skill encodes a complete expert workflow — trigger conditions, step-by-st
 | **commit-craft** | 拆逻辑提交、防密钥泄漏、写讲清 why 的提交信息 | 提交代码 |
 
 ```bash
-# 生态标准安装（推荐——works with Claude Code, Cursor, Codex, OpenCode and 70+ agents）
+# 生态标准安装（推荐——works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode and 70+ agents）
 npx skills add Hahaknight/claude-skills-pro
+
+# 装进其他 agent（示例：Gemini CLI / Codex / Cursor）
+npx skills add Hahaknight/claude-skills-pro --agent gemini-cli
 
 # 或手动安装（macOS/Linux/Git Bash）
 git clone https://github.com/Hahaknight/claude-skills-pro.git
