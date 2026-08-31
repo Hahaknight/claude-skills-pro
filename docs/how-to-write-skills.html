@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>如何编写高质量的 Claude Code Skill — 实战指南（2026）</title>
+<meta name="description" content="Claude Code Skill 编写实战指南：description 触发机制、frontmatter 写法公式、Body 黄金结构（Workflow/Output/Anti-patterns）、7 个常见错误对照、测试方法。附可直接复制的真实例子。">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--max:820px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+header{padding:64px 0 24px}
+h1{font-size:clamp(26px,4.5vw,38px);letter-spacing:-.5px;margin-bottom:12px}
+.sub{color:var(--muted);font-size:17px}
+section{padding:28px 0}
+h2{font-size:22px;margin-bottom:14px;padding-top:8px;border-top:1px solid var(--border)}
+h3{font-size:17px;margin:18px 0 8px}
+p{margin:10px 0;color:var(--text)}
+p.m,li{color:var(--muted)}
+ul,ol{padding-left:24px;margin:10px 0}
+li{margin:6px 0}
+pre{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;overflow-x:auto;font-size:13.5px;line-height:1.6;margin:14px 0}
+code{font-family:Consolas,"Courier New",monospace}
+p code,li code,td code{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:13px;color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+.bad{color:#f85149}.good{color:var(--green)}
+.cta{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;margin:40px 0 24px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 30px;border-radius:10px;margin:12px 6px 0;font-size:15px}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+a{color:var(--accent)}
+.tip{border-left:3px solid var(--green);background:var(--card);padding:10px 16px;border-radius:0 10px 10px 0;margin:14px 0;font-size:14.5px}
+</style>
+</head>
+<body>
+<header class="wrap">
+<h1>如何编写高质量的 Claude Code Skill</h1>
+<p class="sub">Skill 是 Claude Code 生态里「写一次、永久生效」的能力资产。这篇指南讲清楚：它怎么被触发、怎么写才真的生效、以及 7 个最常见的失败写法。</p>
+</header>
+
+<div class="wrap">
+
+<section>
+<h2>1. Skill 到底是什么（30 秒）</h2>
+<p>一个 skill 就是一个带说明书的目录，核心是一个 <code>SKILL.md</code> 文件。它与三种老方式的区别：</p>
+<table>
+<tr><th>方式</th><th>问题</th><th>Skill 解决了什么</th></tr>
+<tr><td>每次打字交代</td><td>同样的要求重复几十遍，版本漂移</td><td>交代一次，永久生效</td></tr>
+<tr><td>写进 CLAUDE.md</td><td>所有规则常驻上下文，互相干扰，token 浪费</td><td>按需加载——用到才读</td></tr>
+<tr><td>MCP 工具</td><td>解决「能力」，不解决「做法」</td><td>skill 是「做法」：步骤、标准、禁区</td></tr>
+</table>
+<p class="m">一句话：MCP 给 Claude 新的手，skill 教它新的脑。</p>
+</section>
+
+<section>
+<h2>2. 解剖一个 SKILL.md</h2>
+<pre><code>my-skill/
+└── SKILL.md</code></pre>
+<p><code>SKILL.md</code> 由两部分构成：<b>frontmatter（机器读）</b> + <b>正文（Claude 干活时读）</b>。</p>
+<pre><code>---
+name: code-review-checklist
+description: 七维度系统化审查代码改动。MUST USE when 用户要求 review 代码、审查 PR、检查 diff、code review、"帮我看看这段代码对不对"。关键词：代码审查、review、PR、diff。
+---
+
+# 代码审查清单
+## Workflow
+1. 先读 diff 全貌，理解意图再挑错
+2. 按七个维度逐项检查：正确性/安全/性能/契约/错误处理/测试/可维护性
+3. 每个发现必须附 file:line 和具体修法
+## Output
+按 Blockers / Should-fix / Nits 三级输出，末尾给 Verdict
+## Anti-patterns
+- 禁止只说 "Looks good" 的盖章式审查
+- 禁止报风格问题占用 blocker 位置</code></pre>
+</section>
+
+<section>
+<h2>3. 最重要的一行：description 决定生死</h2>
+<p>Claude 平时<b>不加载</b>你的 skill 正文，它只看每个 skill 的 <code>description</code> 来决定「现在要不要用」。所以 description 写砸了，正文再好也永远沉睡。</p>
+<h3>公式</h3>
+<pre><code>description: 【做什么】+ 【MUST USE when 触发场景】+ 【用户会说的原话关键词】</code></pre>
+<h3>对照</h3>
+<table>
+<tr><th>❌ 沉睡写法</th><th>✅ 会被触发</th></tr>
+<tr><td><code>Helps with code quality</code></td><td><code>七维度审查代码改动。MUST USE when 用户要求 review、审查 PR、检查 diff、看看代码有没有问题</code></td></tr>
+<tr><td><code>Git commit helper</code></td><td><code>拆分逻辑提交并写规范 commit message。MUST USE when 用户要提交代码、写 commit、说 "commit this"</code></td></tr>
+</table>
+<div class="tip">把用户<b>原话</b>写进去。用户不会说「请优化我的提交工艺」，他们只会说 "commit 一下"。</div>
+</section>
+
+<section>
+<h2>4. 正文的黄金结构</h2>
+<p>经验上最有效的三段式（不是理论，是踩坑后的结论）：</p>
+<ol>
+<li><b>Workflow</b> —— 编号步骤。Claude 拿到步骤的执行一致性远高于拿到一堆描述。</li>
+<li><b>Output</b> —— 规定输出形态（分级/表格/字段）。规定形态 = 规定质量下限。</li>
+<li><b>Anti-patterns</b> —— 禁止事项。<b>这是大多数人漏掉、但杠杆最大的一段</b>：模型对「禁止 X」的服从度极高，因为它把模糊的「要好」变成了可判定的「别这样」。</li>
+</ol>
+<div class="tip">「不许盖章放行」比「要认真审查」有效十倍。</div>
+</section>
+
+<section>
+<h2>5. 七个常见错误（每个都附修法）</h2>
+<table>
+<tr><th>#</th><th>错误</th><th>修法</th></tr>
+<tr><td>1</td><td class="bad">description 含糊（"improve coding"）</td><td class="good">套第 3 节公式，写用户原话</td></tr>
+<tr><td>2</td><td class="bad">一个 skill 管五件事</td><td class="good">拆开。触发条件越单一，命中率越高</td></tr>
+<tr><td>3</td><td class="bad">正文是提示词堆砌，没有步骤</td><td class="good">改成编号 Workflow</td></tr>
+<tr><td>4</td><td class="bad">没有输出格式约定</td><td class="good">规定分级/表格/必填字段</td></tr>
+<tr><td>5</td><td class="bad">没有 Anti-patterns 段</td><td class="good">至少写 2-3 条硬禁区</td></tr>
+<tr><td>6</td><td class="bad">中英文关键词只写一种</td><td class="good">双语都写（说 "review" 和说 "审查" 的是同一个人）</td></tr>
+<tr><td>7</td><td class="bad">写完不测</td><td class="good">下一节：三个测试用例</td></tr>
+</table>
+</section>
+
+<section>
+<h2>6. 怎么测：三个用例</h2>
+<ol>
+<li><b>触发测试</b>：新会话里用「用户原话」提需求（如 <code>帮我看看这次改动有没有问题</code>），看 skill 是否被加载。没触发 → 回去改 description。</li>
+<li><b>反例测试</b>：说一句相近但不该触发的话（如「帮我写个新功能」），确认它<b>不</b>乱入。误触发比不触发更烦。</li>
+<li><b>质量测试</b>：故意埋一个 bug（如漏掉幂等检查），看 skill 能不能按它的 Workflow 抓出来。抓不出 → 步骤不够具体。</li>
+</ol>
+</section>
+
+<section>
+<h2>7. 装到哪里</h2>
+<pre><code># 用户级（所有项目可用）
+my-skill/SKILL.md  →  ~/.claude/skills/my-skill/SKILL.md
+
+# 项目级（随仓库走，团队共享）
+my-skill/SKILL.md  →  &lt;repo&gt;/.claude/skills/my-skill/SKILL.md</code></pre>
+<p class="m">项目级是团队规范对齐的利器：skill 进了仓库，全团队的 Claude 自动同频。</p>
+</section>
+
+<section>
+<h2>8. 想直接用现成的？</h2>
+<p>本文的写法原则来自一个 15 个 skill 的工程包——<b>pr-reviewer / bug-hunter / test-forge / feature-spec / commit-craft</b> 这 5 个在 GitHub 上以 MIT 开源，可以直接当模板改：</p>
+<div class="cta">
+<p><b>Claude Skills Pro</b> — 15 个固化资深工程师工作流的技能包</p>
+<a class="btn" href="https://github.com/Hahaknight/claude-skills-pro">GitHub 免费样品（MIT）</a>
+<a class="btn ghost" href="./">看完整目录 →</a>
+</div>
+</section>
+
+</div>
+<footer class="wrap">Claude Skills Pro · <a href="https://github.com/Hahaknight/claude-skills-pro">github.com/Hahaknight/claude-skills-pro</a></footer>
+</body>
+</html>
