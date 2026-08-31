@@ -76,6 +76,10 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 提示词是"每次重复交代"；skill 是"交代一次，永久生效"。
 Skills trigger automatically based on what you're doing — describe the intent ("review my changes"), get the workflow ("seven-dimension review, findings ranked, no rubber-stamping").
 
+## 同作者的另一个包 / From the same author
+
+- **[数字员工配置包](https://github.com/Hahaknight/digital-employee-pack)** — 面向非程序员的中文办公提效技能包（周报/纪要/表格清洗 + 防护 Hooks + SOP），全部中文、零编程门槛。
+
 ## License
 
 - 本仓库免费样品：MIT
