@@ -1,5 +1,7 @@
 # Claude Skills Pro — 15 Battle-Tested Engineering Skills for Claude Code
 
+[![skills.sh](https://skills.sh/b/Hahaknight/claude-skills-pro)](https://skills.sh/Hahaknight/claude-skills-pro)
+
 **让你的 Claude Code 从"聊天助手"变成"资深工程搭档"。**
 Turn Claude Code from a chat assistant into a staff-level engineering partner.
 
