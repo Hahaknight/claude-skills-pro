@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKILL.md Format Reference (2026) — frontmatter, triggers, body structure, install paths</title>
+<meta name="description" content="The complete SKILL.md format reference: required frontmatter, how trigger descriptions actually work, the golden body structure, directory conventions per agent, and a validation checklist. Works for Claude Code, Codex, Gemini CLI, Cursor and 70+ agents.">
+<link rel="canonical" href="https://hahaknight.github.io/claude-skills-pro/skill-md-format.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SKILL.md Format Reference (2026)">
+<meta property="og:description" content="Frontmatter, triggers, body structure, directory conventions, and validation — the complete format reference for the open agent-skills format.">
+<meta property="og:image" content="https://hahaknight.github.io/claude-skills-pro/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--max:820px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+header{padding:64px 0 24px}
+h1{font-size:clamp(26px,4.5vw,38px);letter-spacing:-.5px;margin-bottom:12px}
+.sub{color:var(--muted);font-size:17px}
+section{padding:22px 0}
+h2{font-size:22px;margin-bottom:12px;margin-top:8px}
+p{margin:10px 0;color:var(--text)}
+p.muted,li{color:var(--muted)}
+code,pre{font-family:Consolas,monospace}
+code{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:13.5px;color:var(--green)}
+pre{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.7;margin:14px 0;color:var(--text)}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px}
+th,td{border:1px solid var(--border);padding:8px 12px;text-align:left}
+th{background:var(--card);color:var(--text)}
+td{color:var(--muted)}
+.warn{border-left:3px solid #d29922;background:var(--card);padding:10px 16px;border-radius:0 10px 10px 0;margin:14px 0;color:var(--text)}
+.cta{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;margin:36px 0 24px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 30px;border-radius:10px;margin:10px 6px 0;font-size:15px}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:26px 0;color:var(--muted);font-size:13px;text-align:center}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header class="wrap">
+<h1>SKILL.md Format Reference</h1>
+<p class="sub">The open agent-skills format, in one page: required frontmatter, how triggering actually works, the body structure that gets followed, directory conventions per agent, and a pre-publish checklist. Written from shipping and maintaining a 15-skill pack. Last updated: 2026.</p>
+</header>
+
+<div class="wrap">
+
+<section>
+<h2>1. What a skill is</h2>
+<p>A skill is a folder with a <code>SKILL.md</code> file — a markdown instruction unit that an AI coding agent loads <b>when a task matches</b>, giving it a domain workflow instead of a one-off prompt. The format started in Claude Code and is now an open specification (<a href="https://agentskills.io">agentskills.io</a>) implemented by Claude Code, Codex CLI, Gemini CLI, Cursor, Windsurf, opencode, Copilot and 70+ other agents.</p>
+<p class="muted">The economics: a skill is procedural knowledge that installs once and fires forever. It is the closest thing the agent ecosystem has to a package.</p>
+</section>
+
+<section>
+<h2>2. Frontmatter — the two required fields</h2>
+<pre>---
+name: pr-reviewer
+description: &gt;
+  Use this skill when reviewing a pull request, a branch diff,
+  staged changes, or when the user asks to "review this" before
+  committing or merging. Performs a systematic seven-dimension
+  review instead of a superficial read, and classifies every
+  finding as blocker / should-fix / nit.
+---</pre>
+<table>
+<tr><th>Field</th><th>Required</th><th>Rules</th></tr>
+<tr><td><code>name</code></td><td>yes</td><td>lowercase-kebab-case, must match the folder name</td></tr>
+<tr><td><code>description</code></td><td>yes</td><td>The <b>trigger surface</b>. Name the conditions in the user's words, not the architecture (see §3)</td></tr>
+<tr><td><code>allowed-tools</code></td><td>no</td><td>Restrict which tools the skill may invoke</td></tr>
+<tr><td>license / metadata</td><td>no</td><td>Per-repo convention</td></tr>
+</table>
+</section>
+
+<section>
+<h2>3. The trigger model — where 80% of skills fail</h2>
+<p>The agent decides <b>when to load your skill almost entirely from the description field</b>. Not from the body. Not from the folder name. The description is matched against the current task, so:</p>
+<p>❌ <i>"A powerful code review assistant that helps developers improve quality."</i> — marketing copy; matches nothing.</p>
+<p>✅ <i>"Use when reviewing a pull request, a diff before committing, or when asked to check a change for problems."</i> — mirrors the user's phrasing at the moment of need.</p>
+<div class="warn">Write the description as a list of trigger phrases the user would actually type, plus what the skill does. If it never fires, fix the description before touching anything else.</div>
+</section>
+
+<section>
+<h2>4. Body structure that gets followed</h2>
+<pre>## When to Use          — conditions + when NOT to fire
+## Workflow             — NUMBERED steps (ordered lists are
+                          followed; prose gets summarized)
+## Output format        — the exact skeleton of the reply
+## Anti-patterns        — what NOT to do, explicitly</pre>
+<p>Numbered steps beat prose because agents execute ordered lists in order and summarize paragraphs. Anti-patterns are not decoration — telling the agent what <i>not</i> to do is what suppresses its sycophantic defaults ("looks good to me!").</p>
+</section>
+
+<section>
+<h2>5. Directory conventions</h2>
+<p>Per-skill folder layout, discovered up to three levels deep:</p>
+<pre>skills/&lt;name&gt;/SKILL.md            flat layout
+skills/&lt;category&gt;/&lt;name&gt;/SKILL.md  catalog layout</pre>
+<p>Common install targets per agent: <code>~/.claude/skills/</code> (Claude Code), <code>~/.codex/skills/</code>, <code>.agents/skills/</code> (shared convention read by Gemini CLI and others), <code>~/.cursor/skills/</code>, <code>.opencode/skills/</code>. Or skip the matrix entirely:</p>
+<pre>npx skills add &lt;owner/repo&gt;                # picks your agents interactively
+npx skills add &lt;owner/repo&gt; --agent gemini-cli</pre>
+</section>
+
+<section>
+<h2>6. Pre-publish checklist</h2>
+<p>1. <code>name</code> matches the folder, kebab-case</p>
+<p>2. Description names ≥3 concrete trigger phrases in user language</p>
+<p>3. Workflow is a numbered list; every step is an action, not a topic</p>
+<p>4. Output format is a literal skeleton the agent can fill</p>
+<p>5. Anti-patterns ≥3, each preventing an observed failure mode</p>
+<p>6. No skill exceeds what its name promises (scope creep = false triggers)</p>
+<p>7. Tested: the skill fires on the intended phrasing, stays silent on neighbors</p>
+</section>
+
+<section class="cta">
+<p><b>See the format in working files:</b> five free, MIT-licensed example skills — review, debugging, testing, spec, commits — each demonstrating every section above.</p>
+<a class="btn" href="https://github.com/Hahaknight/claude-skills-pro">Get the 5 free skills</a>
+<a class="btn ghost" href="how-to-write-skills-en.html">Full writing guide →</a>
+</section>
+
+</div>
+<footer class="wrap">Claude Skills Pro · <a href="./">catalog</a> · <a href="how-to-write-skills.html">中文指南</a> · <a href="best-claude-code-skills.html">Top 15 list</a></footer>
+</body>
+</html>
