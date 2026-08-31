@@ -25,10 +25,10 @@ Each skill encodes a complete expert workflow — trigger conditions, step-by-st
 | **ai-code-reviewer** | AI 生成代码八类缺陷核对（幻觉 API、行为漂移、过度工程） | review AI 写的代码 |
 
 ```bash
-# 生态标准安装（推荐——works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode and 70+ agents）
+# 生态标准安装（推荐——works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode and 75+ agents）
 npx skills add Hahaknight/claude-skills-pro
 
-# 装进其他 agent（示例：Gemini CLI / Codex / Cursor）
+# 装进其他 agent：--agent codex / gemini-cli / qwen-code / goose / crush / cursor …
 npx skills add Hahaknight/claude-skills-pro --agent gemini-cli
 
 # 或手动安装（macOS/Linux/Git Bash）
