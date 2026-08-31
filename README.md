@@ -58,7 +58,7 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 | legacy-explainer | 数据流式代码解释，结论带 file:line 出处 |
 
 **Pro 版还包含：**
-- 📖 **《Claude Code 中文实战手册》**——黄金工作流组合、10 个让产出翻倍的提问方式、高频坑解法、团队落地指南
+- 📖 **《Claude Code 中文实战手册》（11 章）**——黄金工作流组合（含实战对话示例）、10 个让产出翻倍的提问方式、8 条高频坑解法、场景速查表、**AI 代码八类缺陷核对清单**、**如何写你自己的 Skill（description 公式 + 发布前三测）**、团队三周落地路线
 - ⚡ 一键安装脚本（bash + PowerShell）
 - 🏢 团队部署方案（提交进仓库 `.claude/skills/`，全团队规范自动对齐）
 - 🔄 后续版本更新
