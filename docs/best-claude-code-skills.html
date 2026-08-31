@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 15 Best Claude Code Skills for Engineers (2026) — tested daily</title>
+<meta name="description" content="A curated, opinionated list of the 15 Claude Code skills an engineer actually needs: code review, debugging, testing, migrations, security. 5 free under MIT, install in one command.">
+<link rel="canonical" href="https://hahaknight.github.io/claude-skills-pro/best-claude-code-skills.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The 15 Best Claude Code Skills for Engineers (2026)">
+<meta property="og:description" content="The 15 skills an engineer actually needs — code review, debugging, testing, migrations, security. 5 free under MIT.">
+<meta property="og:image" content="https://hahaknight.github.io/claude-skills-pro/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--max:820px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+header{padding:64px 0 24px}
+h1{font-size:clamp(26px,4.5vw,38px);letter-spacing:-.5px;margin-bottom:12px}
+.sub{color:var(--muted);font-size:17px}
+.install{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-family:Consolas,monospace;font-size:14px;margin:20px 0;color:var(--green)}
+section{padding:20px 0}
+.skill{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:14px 0}
+.skill h2{font-size:18px;margin-bottom:6px}
+.skill p{color:var(--muted);font-size:14.5px;margin:6px 0}
+.tag{display:inline-block;font-size:11px;color:var(--green);border:1px solid var(--green);border-radius:6px;padding:0 8px;margin-left:8px;vertical-align:2px}
+.tag.pro{color:#d29922;border-color:#d29922}
+.cta{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;margin:36px 0 24px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 30px;border-radius:10px;margin:10px 6px 0;font-size:15px}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:26px 0;color:var(--muted);font-size:13px;text-align:center}
+a{color:var(--accent)}
+.disclosure{color:var(--muted);font-size:13px;border-left:3px solid var(--accent);background:var(--card);padding:10px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+</style>
+</head>
+<body>
+<header class="wrap">
+<h1>The 15 Best Claude Code Skills for Engineers</h1>
+<p class="sub">An opinionated, battle-tested stack — the skills I load into every Claude Code install before touching a codebase. Each one encodes a staff-engineer workflow, not a prompt snippet.</p>
+<div class="install">npx skills add Hahaknight/claude-skills-pro &nbsp;# installs the 5 free ones (MIT)</div>
+<p class="sub" style="font-size:14px">Full disclosure: I maintain this pack. 5 of the 15 are free and open source — take those and ignore the rest if you like. <a href="https://hahaknight.github.io/claude-skills-pro/how-to-write-skills-en.html">Here's how to write your own →</a></p>
+</header>
+
+<div class="wrap">
+
+<section>
+<div class="skill"><h2>1. pr-reviewer <span class="tag">FREE</span></h2><p>Seven-dimension review (correctness, security, performance, contracts, error handling, tests, maintainability) with findings ranked Blocker / Should-fix / Nit. The anti-rubber-stamp: every finding carries file:line and a concrete fix.</p><p><b>Why it matters:</b> the default review is a summary. This is a checklist with teeth.</p></div>
+
+<div class="skill"><h2>2. bug-hunter <span class="tag">FREE</span></h2><p>Reproduce → bisect → single hypothesis → minimal fix → regression test. Explicitly bans shotgun patching (change three things, hope one works).</p><p><b>Why it matters:</b> debugging is where AI burns the most time doing the least verifiable work. Forcing a reproducible failure first changes everything.</p></div>
+
+<div class="skill"><h2>3. test-forge <span class="tag">FREE</span></h2><p>Generates boundary-value and failure-path tests, then runs a mutation self-check — kill the mutants or the tests aren't done.</p><p><b>Why it matters:</b> "100% coverage" that catches nothing is the most common AI-testing failure.</p></div>
+
+<div class="skill"><h2>4. feature-spec <span class="tag">FREE</span></h2><p>One page before any code: scope, non-goals, interface contract, edge-case table, test scenarios.</p><p><b>Why it matters:</b> five minutes of spec saves five hours of wrong implementation.</p></div>
+
+<div class="skill"><h2>5. commit-craft <span class="tag">FREE</span></h2><p>Splits tangled changes into logical commits, scans for leaked secrets before they land, writes messages that explain why.</p><p><b>Why it matters:</b> your history is your team's long-term memory.</p></div>
+
+<div class="skill"><h2>6. ai-code-reviewer <span class="tag pro">PRO</span></h2><p>Eight failure modes specific to AI-generated code: hallucinated APIs, behavior drift, over-engineering, silent contract breaks.</p><p><b>Why it matters:</b> AI code needs a different review checklist than human code — the bugs are different.</p></div>
+
+<div class="skill"><h2>7. security-audit <span class="tag pro">PRO</span></h2><p>Attack-surface audit from entry points and trust boundaries. Findings ranked by exploitability with fixes — not an OWASP vocabulary quiz.</p></div>
+
+<div class="skill"><h2>8. db-migration-safe <span class="tag pro">PRO</span></h2><p>expand → migrate → contract three-phase migrations with lock-risk assessment for large tables.</p><p><b>Why it matters:</b> this is the difference between a deploy and an outage.</p></div>
+
+<div class="skill"><h2>9. refactor-surgeon <span class="tag pro">PRO</span></h2><p>Behavior-preserving refactors only: characterization tests first, small commits, any red test means roll back.</p></div>
+
+<div class="skill"><h2>10. perf-profiler <span class="tag pro">PRO</span></h2><p>Measure → locate hotspot → fix → re-measure. Every conclusion ships with before/after numbers. No vibes-based optimization.</p></div>
+
+<div class="skill"><h2>11. codebase-onboarding <span class="tag pro">PRO</span></h2><p>Builds a mental model of an unfamiliar repo in minutes, plus a "to add X, change Y" cheat sheet.</p></div>
+
+<div class="skill"><h2>12. api-designer <span class="tag pro">PRO</span></h2><p>Error contracts, idempotency, cursor pagination, non-breaking evolution — designed for the consumer, not the implementer.</p></div>
+
+<div class="skill"><h2>13. legacy-explainer <span class="tag pro">PRO</span></h2><p>Data-flow tracing through old code. Every claim carries file:line; inference is labeled separately from fact.</p></div>
+
+<div class="skill"><h2>14. dep-guardian <span class="tag pro">PRO</span></h2><p>Risk-graded dependency upgrades and an admission review for new deps (activity, size, license).</p></div>
+
+<div class="skill"><h2>15. changelog-release <span class="tag pro">PRO</span></h2><p>Semver computed from actual contract changes; release notes written from the user's point of view.</p></div>
+</section>
+
+<div class="cta">
+<p><b>Get the stack:</b> 5 skills free (MIT) · all 15 + CN handbook in the Pro pack</p>
+<a class="btn" href="https://github.com/Hahaknight/claude-skills-pro">GitHub — free samples</a>
+<a class="btn ghost" href="./">Full catalog →</a>
+</div>
+
+</div>
+<footer class="wrap">Claude Skills Pro · <a href="https://github.com/Hahaknight/claude-skills-pro">github.com/Hahaknight/claude-skills-pro</a> · 中文版指南 <a href="how-to-write-skills.html">在这里</a></footer>
+</body>
+</html>
