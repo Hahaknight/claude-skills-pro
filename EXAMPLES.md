@@ -94,5 +94,33 @@ Verdict: REQUEST CHANGES
 
 ---
 
-**5 个免费样品** = 上面 pr-reviewer / bug-hunter / feature-spec / test-forge / commit-craft 的完整版。
-**Pro 包**（15 个 + 中文手册 + 安装脚本）：见 [README](README.md)。
+## changelog-release
+
+> 12 个 merged PR → 一份可发布的 Release Notes（semver 由契约变化推出）
+
+```
+## [2.4.0] — 2026-08-31
+
+### ⚠️ Breaking
+- `parseConfig()` now throws on unknown keys (was: silently ignored).
+  Pass `{ strict: false }` for the old behavior. (#412)
+
+### Added
+- Retry policy on `fetchOrders` — `retry: { times, backoff }` (#398)
+- Cursor pagination for `/v2/events` (#405)
+
+### Fixed
+- Race condition in cache invalidation after bulk delete (#417)
+
+### 内部改动（不出现在 notes）
+- CI 迁移到新 runner (#400)、重构 utils/constants (#411)
+
+判定：#412 是破坏性契约变化（消费者自动化会挂）→ MAJOR 位递增；
+#400/#411 无外部行为 → 从用户视角 notes 排除，只在 git log 里存在。
+每条 bullet 带 (#PR)——审阅者核对时是查找，不是重读。
+```
+
+---
+
+**6 个免费样品** = 上面 pr-reviewer / bug-hunter / feature-spec / test-forge / commit-craft / changelog-release 的完整版。
+**Pro 包**（9 个付费 + 手册 + 安装脚本）：见 [README](README.md)。
