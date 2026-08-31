@@ -44,3 +44,6 @@ A test suite earns its keep by failing when the code is wrong. Before submitting
 - Never `catch (e) { /* ignore */ }` inside a test — that's a test that can't fail.
 - Never write snapshot tests as the primary coverage for logic; snapshots are for rendered output only.
 - Don't chase 100% coverage — chase the failure modes. State your reasoning.
+---
+
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*

@@ -39,3 +39,6 @@ A single markdown section, ≤80 lines. If it exceeds that, the feature is too b
 - Don't spec what a linter/type system enforces.
 - Don't present options without a recommendation — pick one, note the alternative.
 - Never invent requirements the user didn't state without marking them `ASSUMPTION:` for review.
+---
+
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*

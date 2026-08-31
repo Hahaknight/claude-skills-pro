@@ -39,3 +39,6 @@ Summary: what was requested vs what was delivered; hallucinations found (list ea
 - Never grade on style/readability — AI code always reads well; that's the trap.
 - Never accept a passing lint/test run as proof when tests were also AI-written.
 - If verification is impossible (no runtime, no docs), say so loudly: "UNVERIFIED — do not ship blind."
+---
+
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*

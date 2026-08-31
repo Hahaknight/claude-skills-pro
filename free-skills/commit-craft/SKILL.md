@@ -52,3 +52,6 @@ description: >
 ## Output
 
 Show the proposed commit plan (staged paths + message) before executing when anything is ambiguous; commit directly when the change is unambiguous and clean.
+---
+
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*

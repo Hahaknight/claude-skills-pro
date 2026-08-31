@@ -62,3 +62,6 @@ Verdict: APPROVE / APPROVE WITH NITS / REQUEST CHANGES
 - DO NOT suggest rewrites when a 3-line fix works. Match the codebase's existing idiom.
 - DO NOT report a "missing test" for trivial type-only or config changes.
 - DO NOT approve because "tests pass" — passing tests do not review the diff. Read every changed line at least once.
+---
+
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*

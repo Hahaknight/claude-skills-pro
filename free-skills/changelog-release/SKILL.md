@@ -45,3 +45,6 @@ Users read release notes to answer one question: "does this affect me, and must 
 - Never hide a breaking change in "Fixed".
 - Never bump PATCH for a behavioral change someone could depend on; version numbers are a contract, not a counter.
 - If notes are empty, the release is empty — don't ship ceremony.
+---
+
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*

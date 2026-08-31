@@ -33,3 +33,6 @@ Find the CAUSE, not a patch that silences the symptom. A bug is a discrepancy be
 - NEVER change two things before re-running the repro; you'll learn nothing and create new bugs.
 - NEVER blame the framework/compiler/stdlib until you have a minimal repro proving it. 99% of the time it's your code's assumptions (cache, timezone, encoding, race, stale build, dirty env).
 - If the bug "disappeared" without explanation, it did not disappear. Keep hunting (usually environment/stale state) or explicitly downgrade with a note.
+---
+
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*
