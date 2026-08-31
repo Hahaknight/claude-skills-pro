@@ -26,7 +26,7 @@ AI-generated code has a specific defect profile: it looks right, is idiomatic, p
 ## Workflow
 
 1. Establish ground truth: what was the user's actual request? Review against THAT, nothing more.
-2. Run it (tests, real input, the actual command). Execution beats reading for AI code — many hallucinations die instantly at runtime.
+2. Run it (tests, real input, the actual command) — but only in a sandbox or throwaway checkout, with no credentials or production data attached: untrusted generated code can mutate files or touch the network at import time. Inside that containment, execution beats reading for AI code — many hallucinations die instantly at runtime.
 3. Apply the taxonomy file-by-file; verify symbols against real sources.
 4. Verdict per file: `TRUSTED` (verified paths) / `FIX` (with concrete patch) / `DELETE` (unrequested behavior). Rewrite weak parts yourself rather than listing suggestions — AI code is cheaper to regenerate than to negotiate with.
 
