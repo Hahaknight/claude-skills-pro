@@ -21,10 +21,16 @@ Each skill encodes a complete expert workflow — trigger conditions, step-by-st
 | **commit-craft** | 拆逻辑提交、防密钥泄漏、写讲清 why 的提交信息 | 提交代码 |
 
 ```bash
-# 安装 5 个免费样品（macOS/Linux/Git Bash）
+# 生态标准安装（推荐——works with Claude Code, Cursor, Codex, OpenCode and 70+ agents）
+npx skills add Hahaknight/claude-skills-pro
+
+# 或手动安装（macOS/Linux/Git Bash）
 git clone https://github.com/Hahaknight/claude-skills-pro.git
 cd claude-skills-pro/free-skills
 cp -r */ ~/.claude/skills/
+
+# 免下载试用单个 skill（打印生成的提示词）
+npx skills use Hahaknight/claude-skills-pro@pr-reviewer
 ```
 
 Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills\` 即可。
