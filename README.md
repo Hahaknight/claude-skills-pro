@@ -5,7 +5,7 @@
 **让你的 Claude Code 从"聊天助手"变成"资深工程搭档"。**
 Turn Claude Code from a chat assistant into a staff-level engineering partner.
 
-**👉 先看 [真实输出示例 EXAMPLES.md](EXAMPLES.md)——描述会说谎，输出不会。** 想自己写 skill？读[《如何编写高质量的 Claude Code Skill》](https://hahaknight.github.io/claude-skills-pro/how-to-write-skills.html)。
+**👉 先看 [真实输出示例 EXAMPLES.md](EXAMPLES.md)——描述会说谎，输出不会。** 📖 中文手册[免费试读：Skills 机制 + 15 行场景速查表](https://hahaknight.github.io/claude-skills-pro/manual-sample-zh.html)。想自己写 skill？读[《如何编写高质量的 Claude Code Skill》](https://hahaknight.github.io/claude-skills-pro/how-to-write-skills.html)。
 
 每个 skill 都是一套完整的专家工作流：不是提示词片段，而是"什么时候触发 + 按什么步骤做 + 什么算违规"的工程规范，直接固化成 Claude 的行为。
 Each skill encodes a complete expert workflow — trigger conditions, step-by-step procedure, and hard anti-patterns — baked into Claude's behavior.

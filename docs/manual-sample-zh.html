@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《Claude Code 中文实战手册》免费试读 — 第 2 章机制 + 第 7 章场景速查表</title>
+<link rel="canonical" href="https://hahaknight.github.io/claude-skills-pro/manual-sample-zh.html">
+<meta name="description" content="Skills 是什么？为什么比提示词和 CLAUDE.md 都好用？15 个场景速查表：遇到 X 说哪句话、触发哪个 skill。完整手册共 11 章，¥19.9。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Claude Code 中文实战手册》免费试读">
+<meta property="og:description" content="第 2 章：Skills 机制 3 分钟讲透 + 第 7 章：15 行场景速查表（遇到 X，说这句话）。">
+<meta property="og:image" content="https://hahaknight.github.io/claude-skills-pro/og-image.png">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--max:820px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
+.wrap{max-width:var(--max);margin:0 auto;padding:48px 24px 72px}
+.free{display:inline-block;margin-bottom:14px;padding:5px 16px;border:1px solid var(--green);border-radius:99px;color:var(--green);font-size:13px}
+h1{font-size:clamp(24px,4vw,34px);letter-spacing:-.4px;margin-bottom:8px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:28px}
+h2{font-size:21px;margin:44px 0 14px;padding-top:24px;border-top:1px solid var(--border)}
+h2:first-of-type{border-top:none}
+p{margin:10px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th,td{border:1px solid var(--border);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:var(--card);color:var(--text)}
+td{color:var(--muted)} td:first-child{color:var(--text)}
+code{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:1px 7px;font-size:.9em;font-family:Consolas,monospace}
+blockquote{border-left:3px solid var(--accent);padding:6px 18px;margin:18px 0;background:var(--card);border-radius:0 8px 8px 0}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin:20px 0}
+.toc ol{margin:8px 0 4px 20px}
+.toc li{padding:3px 0;color:var(--muted)}
+.toc li em{color:var(--green);font-style:normal;font-size:12px}
+.cta{background:linear-gradient(180deg,var(--card),transparent);border:1px solid var(--border);border-radius:14px;padding:30px;text-align:center;margin-top:44px}
+.price{font-size:30px;font-weight:700;margin:6px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 30px;border-radius:9px;margin:12px 6px 0;font-size:15px}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+footer{border-top:1px solid var(--border);margin-top:52px;padding-top:22px;color:var(--muted);font-size:13px;text-align:center}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="free">FREE SAMPLE · 免费试读</span>
+<h1>《Claude Code 中文实战手册》</h1>
+<p class="sub">第 2 章 + 第 7 章完整放送。完整版共 11 章，¥19.9，随 Pro 包交付。</p>
+
+<h2>第 2 章 · Skills 是什么（3 分钟版，含机制）</h2>
+<p>Skill = 一个带说明书的工具文件夹。<code>SKILL.md</code> 分两部分：</p>
+<p>· <strong>frontmatter（机器读）</strong>：<code>name</code> + <code>description</code>。Claude <strong>不加载正文</strong>，它读每个 skill 的 <code>description</code> 来决定「此刻要不要用这个技能」。<br>
+· <strong>正文（工作时读）</strong>：工作流、输出格式、反模式。</p>
+<p>这意味着一个关键事实：<strong><code>description</code> 是触发面，不是文档</strong>。写得含糊（「帮助提升代码质量」）的 skill 永远沉睡；写得精确（「MUST USE when the user asks to review a PR / 审查这次改动 / 这个能上线吗」）的 skill 每次都命中。</p>
+<p>三种老办法为什么不如 skill：</p>
+<table>
+<tr><th>老办法</th><th>问题</th><th>Skill 怎么解决</th></tr>
+<tr><td>每次打字交代</td><td>重复几十遍，版本漂移</td><td>写一次，永久生效</td></tr>
+<tr><td>写进 CLAUDE.md</td><td>常驻上下文，占 token，互相干扰</td><td>按需加载</td></tr>
+<tr><td>MCP 工具</td><td>给的是<strong>能力</strong>（新手动做）</td><td>Skill 给的是<strong>方法</strong>（新脑）</td></tr>
+</table>
+<blockquote>一句话：<strong>Skills 把「你每次都要重复交代的老练做法」固化成了资产。</strong></blockquote>
+
+<h2>第 7 章 · 场景速查：「我现在遇到 X，用哪个」</h2>
+<table>
+<tr><th>你现在的处境</th><th>说这句话</th><th>会触发的 skill</th></tr>
+<tr><td>要做一个新功能</td><td>“先出方案再写”</td><td>feature-spec</td></tr>
+<tr><td>代码写完了不敢提</td><td>“review 这次改动”</td><td>pr-reviewer</td></tr>
+<tr><td>线上炸了</td><td>“排查这个问题，复现+定位根因”</td><td>bug-hunter</td></tr>
+<tr><td>要提交了</td><td>“拆逻辑提交，检查密钥”</td><td>commit-craft</td></tr>
+<tr><td>测试覆盖心虚</td><td>“补能抓住真 bug 的测试”</td><td>test-forge</td></tr>
+<tr><td>接手新项目第一天</td><td>“熟悉这个项目，建索引”</td><td>codebase-onboarding</td></tr>
+<tr><td>看不懂祖传代码</td><td>“追踪数据流解释这段，标出处”</td><td>legacy-explainer</td></tr>
+<tr><td>要改数据库</td><td>“大表改结构，expand-contract”</td><td>db-migration-safe</td></tr>
+<tr><td>要发版</td><td>“按契约变化定版本，写 notes”</td><td>changelog-release</td></tr>
+<tr><td>性能不行</td><td>“先 profile 找热点再优化”</td><td>perf-profiler</td></tr>
+<tr><td>升级框架</td><td>“按官方升级指南走，先查废弃 API”</td><td>dep-guardian</td></tr>
+<tr><td>AI 写了一大坨</td><td>“按八类缺陷核对这段 AI 代码”</td><td>ai-code-reviewer</td></tr>
+<tr><td>设计新接口</td><td>“设计不会破坏兼容的 API”</td><td>api-designer</td></tr>
+<tr><td>要重构</td><td>“先特征测试再小步重构”</td><td>refactor-surgeon</td></tr>
+<tr><td>上线前不放心</td><td>“真实攻击面安全审查”</td><td>security-audit</td></tr>
+</table>
+
+<div class="toc">
+<strong>📖 完整版目录（11 章）——本章之外你还会得到：</strong>
+<ol>
+<li>五分钟装好这套包 <em>免费可读</em></li>
+<li>Skills 是什么（机制） <em>← 本页免费</em></li>
+<li><strong>黄金工作流（本包的最佳组合拳，含实战对话示例）</strong></li>
+<li><strong>十个让产出翻倍的提问方式</strong></li>
+<li><strong>高频坑与解法（8 条）</strong></li>
+<li>团队用法：提交进仓库，全团队规范自动对齐</li>
+<li>场景速查表 <em>← 本页免费</em></li>
+<li><strong>深度专题：AI 代码八类缺陷核对</strong></li>
+<li><strong>深度专题：如何写你自己的 Skill（description 公式 + 发布前三测）</strong></li>
+<li>目录速查</li>
+<li>许可与更新</li>
+</ol>
+</div>
+
+<div class="cta">
+<div class="price">¥19.9 <span style="font-size:15px;color:var(--muted);font-weight:400">/ 中文版 · 含 15 个 skill 完整包</span></div>
+<p style="color:var(--muted);font-size:14px">在 <a href="https://github.com/Hahaknight/claude-skills-pro/issues/1">issue #1</a> 评论「购买 + 中文」，24 小时内回复付款方式并发货。</p>
+<a class="btn" href="https://github.com/Hahaknight/claude-skills-pro/issues/1">购买完整手册 →</a>
+<a class="btn ghost" href="https://github.com/Hahaknight/claude-skills-pro">先看 7 个免费 skills →</a>
+</div>
+
+<footer>《Claude Code 中文实战手册》试读页 · <a href="index.html">Claude Skills Pro 主页</a> · markdown 原文随 Pro 包交付</footer>
+</div>
+</body>
+</html>
