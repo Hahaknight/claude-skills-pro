@@ -74,7 +74,7 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 ### 直接付款（国内）/ Direct Payment
 
 支付宝扫码支付 ¥19.9 → 付款截图发 [issue #1](../../issues/1) 评论 → 通常几分钟内回复解压密码（深夜最迟 2 小时）。
-<img src="https://hahaknight.github.io/qr/alipay.png" width="180" alt="支付宝收款码 Alipay QR">
+[<img src="https://hahaknight.github.io/qr/alipay.png" width="240" alt="支付宝收款码 Alipay QR（点击看大图）">](https://hahaknight.github.io/qr/alipay.png)
 
 ---
 
