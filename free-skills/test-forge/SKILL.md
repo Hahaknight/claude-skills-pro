@@ -48,9 +48,3 @@ A test suite earns its keep by failing when the code is wrong. Before submitting
 ---
 
 *(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*
-
----
-
-## More
-
-Free sample from **claude-skills-pro** — the full pack adds 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe…) + an 11-chapter handbook. Free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).
