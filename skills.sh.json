@@ -1,0 +1,19 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Free Skills (MIT)",
+      "description": "7 free engineering-workflow skills — install individually or grab the whole repo. The full Pro pack adds 8 more (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe…) plus an 11-chapter handbook.",
+      "skills": [
+        "pr-reviewer",
+        "test-forge",
+        "bug-hunter",
+        "ai-code-reviewer",
+        "feature-spec",
+        "commit-craft",
+        "changelog-release"
+      ]
+    }
+  ]
+}
