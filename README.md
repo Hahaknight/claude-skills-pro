@@ -71,6 +71,11 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 
 🚀 Shipping now — **star the repo and watch [releases](../../releases)** to get notified. **Buy today**: comment "buy + CN/EN" in [issue #1](../../issues/1) and we reply with payment options and deliver within minutes (2h max in late-night hours) (¥19.9 / $9.9).
 
+### 直接付款（国内）/ Direct Payment
+
+支付宝扫码支付 ¥19.9 → 付款截图发 [issue #1](../../issues/1) 评论 → 通常几分钟内回复解压密码（深夜最迟 2 小时）。
+<img src="https://hahaknight.github.io/qr/alipay.png" width="180" alt="支付宝收款码 Alipay QR">
+
 ---
 
 ## 为什么是 skills 而不是提示词？
