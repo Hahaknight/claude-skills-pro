@@ -138,4 +138,8 @@ Verdict: REQUEST CHANGES
 ---
 
 **7 个免费样品** = 上面 pr-reviewer / bug-hunter / feature-spec / test-forge / commit-craft / changelog-release / ai-code-reviewer 的完整版。
-**Pro 包**（8 个付费 + 手册 + 安装脚本）：见 [README](README.md)。
+
+**想要另外 8 个 Pro 技能（security-audit / refactor-surgeon / perf-profiler / api-designer / db-migration-safe…）+ 11 章中文实战手册？**
+
+📦 完整包在 [Releases v1.0](../../releases/tag/v1.0)（密码保护）——**购买**：[issue #1](../../issues/1) 评论「购买 + 中文/英文」（¥19.9 / $9.9），24h 内发解压密码。🎁 前 5 位评论使用场景的**免费换**完整包。
+💬 已装免费样品？[讨论区](../../discussions/2) 反馈使用体验同样换完整包。
