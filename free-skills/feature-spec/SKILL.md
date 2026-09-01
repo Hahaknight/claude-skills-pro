@@ -6,6 +6,7 @@ description: >
   vaguely — 先出方案/需求不清/design first. Converts vague asks into a
   1-page spec with scope, contracts, edge cases, and test scenarios —
   getting alignment BEFORE code is written.
+  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
 ---
 
 # Feature Spec — Design Before Code

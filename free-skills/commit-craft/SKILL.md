@@ -5,6 +5,7 @@ description: >
   the user says commit this / 帮我提交. Groups changes into logical commits,
   writes conventional-commit messages that explain WHY, and never commits
   secrets or unrelated files.
+  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
 ---
 
 # Commit Craft — Professional Git Commits

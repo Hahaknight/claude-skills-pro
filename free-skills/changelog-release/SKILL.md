@@ -4,6 +4,7 @@ description: >
   MUST USE when cutting a release, writing CHANGELOG entries / release notes /
   发版/版本号, or deciding the next semver. Produces user-facing notes grouped
   by impact and bumps versions by the actual contract delta.
+  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
 ---
 
 # Changelog & Release — Communicate What Changed

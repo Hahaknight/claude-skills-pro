@@ -5,6 +5,7 @@ description: >
   or when tests fail unexpectedly. Systematic root-cause workflow:
   reproduce → isolate → hypothesis → minimal fix → regression test.
   Forbids shotgun fixes and "fix around the symptom".
+  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
 ---
 
 # Bug Hunter — Root Cause Debugging

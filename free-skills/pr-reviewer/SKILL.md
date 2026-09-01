@@ -6,6 +6,7 @@ description: >
   systematic 7-dimension review (correctness, security, performance, tests,
   API contract, error handling, maintainability) instead of a superficial read.
   Works on staged diffs, branch diffs vs main, or PR numbers via gh.
+  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
 ---
 
 # PR Reviewer — Systematic Code Review

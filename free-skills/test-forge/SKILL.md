@@ -5,6 +5,7 @@ description: >
   or when asked to verify a module with tests. Produces test suites that
   actually kill mutants: edge cases, boundaries, failure paths, property
   tests — not happy-path theater.
+  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
 ---
 
 # Test Forge — Tests That Catch Real Bugs

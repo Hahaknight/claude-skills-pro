@@ -6,6 +6,7 @@ description: >
   unverified. Targets the characteristic failure modes of AI-generated code:
   plausible-but-wrong, hallucinated APIs, silent behavior drift, security
   theater, and over-engineering.
+  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
 ---
 
 # AI Code Reviewer — Trust, but Verify Harder
