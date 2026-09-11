@@ -5,7 +5,7 @@ description: >
   the user says commit this / 帮我提交. Groups changes into logical commits,
   writes conventional-commit messages that explain WHY, and never commits
   secrets or unrelated files.
-  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
+  Part of claude-skills-pro - 8 more skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook, all free: github.com/Hahaknight/claude-skills-pro
 ---
 
 # Commit Craft — Professional Git Commits
@@ -55,4 +55,4 @@ description: >
 Show the proposed commit plan (staged paths + message) before executing when anything is ambiguous; commit directly when the change is unambiguous and clean.
 ---
 
-*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 15 skills in total: 7 MIT samples in-repo plus 8 more in the free full pack (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) and an 11-chapter CN handbook. Everything is free — grab the pack from [Releases](https://github.com/Hahaknight/claude-skills-pro/releases).)*
