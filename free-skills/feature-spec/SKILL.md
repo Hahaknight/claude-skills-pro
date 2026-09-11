@@ -6,7 +6,7 @@ description: >
   vaguely — 先出方案/需求不清/design first. Converts vague asks into a
   1-page spec with scope, contracts, edge cases, and test scenarios —
   getting alignment BEFORE code is written.
-  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
+  Part of claude-skills-pro - 8 more skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook, all free: github.com/Hahaknight/claude-skills-pro
 ---
 
 # Feature Spec — Design Before Code
@@ -42,4 +42,4 @@ A single markdown section, ≤80 lines. If it exceeds that, the feature is too b
 - Never invent requirements the user didn't state without marking them `ASSUMPTION:` for review.
 ---
 
-*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 15 skills in total: 7 MIT samples in-repo plus 8 more in the free full pack (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) and an 11-chapter CN handbook. Everything is free — grab the pack from [Releases](https://github.com/Hahaknight/claude-skills-pro/releases).)*
