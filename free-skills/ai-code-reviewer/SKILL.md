@@ -6,7 +6,7 @@ description: >
   unverified. Targets the characteristic failure modes of AI-generated code:
   plausible-but-wrong, hallucinated APIs, silent behavior drift, security
   theater, and over-engineering.
-  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
+  Part of claude-skills-pro - 8 more skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook, all free: github.com/Hahaknight/claude-skills-pro
 ---
 
 # AI Code Reviewer — Trust, but Verify Harder
@@ -42,4 +42,4 @@ Summary: what was requested vs what was delivered; hallucinations found (list ea
 - If verification is impossible (no runtime, no docs), say so loudly: "UNVERIFIED — do not ship blind."
 ---
 
-*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 15 skills in total: 7 MIT samples in-repo plus 8 more in the free full pack (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) and an 11-chapter CN handbook. Everything is free — grab the pack from [Releases](https://github.com/Hahaknight/claude-skills-pro/releases).)*
