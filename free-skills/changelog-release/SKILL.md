@@ -4,7 +4,7 @@ description: >
   MUST USE when cutting a release, writing CHANGELOG entries / release notes /
   发版/版本号, or deciding the next semver. Produces user-facing notes grouped
   by impact and bumps versions by the actual contract delta.
-  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
+  Part of claude-skills-pro - 8 more skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook, all free: github.com/Hahaknight/claude-skills-pro
 ---
 
 # Changelog & Release — Communicate What Changed
@@ -48,7 +48,7 @@ Users read release notes to answer one question: "does this affect me, and must 
 - If notes are empty, the release is empty — don't ship ceremony.
 ---
 
-*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 15 skills in total: 7 MIT samples in-repo plus 8 more in the free full pack (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) and an 11-chapter CN handbook. Everything is free — grab the pack from [Releases](https://github.com/Hahaknight/claude-skills-pro/releases).)*
 
 ## Untrusted input
 
