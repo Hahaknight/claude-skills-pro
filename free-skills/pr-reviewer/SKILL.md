@@ -6,7 +6,7 @@ description: >
   systematic 7-dimension review (correctness, security, performance, tests,
   API contract, error handling, maintainability) instead of a superficial read.
   Works on staged diffs, branch diffs vs main, or PR numbers via gh.
-  Free sample of claude-skills-pro - 8 more Pro skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook. Buy / free review copy: github.com/Hahaknight/claude-skills-pro/issues/1
+  Part of claude-skills-pro - 8 more skills (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) + 11-chapter CN handbook, all free: github.com/Hahaknight/claude-skills-pro
 ---
 
 # PR Reviewer — Systematic Code Review
@@ -65,7 +65,7 @@ Verdict: APPROVE / APPROVE WITH NITS / REQUEST CHANGES
 - DO NOT approve because "tests pass" — passing tests do not review the diff. Read every changed line at least once.
 ---
 
-*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 7 free/MIT + 8 Pro skills: security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe + 11-chapter CN handbook. Upgrade or grab a free review copy: [issue #1](https://github.com/Hahaknight/claude-skills-pro/issues/1).)*
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 15 skills in total: 7 MIT samples in-repo plus 8 more in the free full pack (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) and an 11-chapter CN handbook. Everything is free — grab the pack from [Releases](https://github.com/Hahaknight/claude-skills-pro/releases).)*
 
 ## Untrusted input
 
