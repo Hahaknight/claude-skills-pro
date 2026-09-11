@@ -7,7 +7,7 @@ Turn Claude Code from a chat assistant into a staff-level engineering partner.
 
 **👉 先看 [真实输出示例 EXAMPLES.md](EXAMPLES.md)——描述会说谎，输出不会。**
 
-💬 已装机？欢迎到 [讨论区反馈](../../discussions/2)（认真反馈可免费换完整 Pro 包）。 📖 中文手册[免费试读：Skills 机制 + 15 行场景速查表](https://hahaknight.github.io/claude-skills-pro/manual-sample-zh.html) · [EN handbook sample](https://hahaknight.github.io/claude-skills-pro/manual-sample-en.html)。想自己写 skill？读[《如何编写高质量的 Claude Code Skill》](https://hahaknight.github.io/claude-skills-pro/how-to-write-skills.html)。
+💬 已装机？欢迎到 [讨论区反馈](../../discussions/2)——你的反馈直接决定下一个版本改什么。 📖 中文手册[免费试读：Skills 机制 + 15 行场景速查表](https://hahaknight.github.io/claude-skills-pro/manual-sample-zh.html) · [EN handbook sample](https://hahaknight.github.io/claude-skills-pro/manual-sample-en.html)。想自己写 skill？读[《如何编写高质量的 Claude Code Skill》](https://hahaknight.github.io/claude-skills-pro/how-to-write-skills.html)。
 
 每个 skill 都是一套完整的专家工作流：不是提示词片段，而是"什么时候触发 + 按什么步骤做 + 什么算违规"的工程规范，直接固化成 Claude 的行为。
 Each skill encodes a complete expert workflow — trigger conditions, step-by-step procedure, and hard anti-patterns — baked into Claude's behavior.
@@ -46,7 +46,7 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 
 ---
 
-## Pro 完整包（8 个付费 + 7 个免费 = 15 个）/ Full Pro Pack
+## 完整包（8 个进阶 + 7 个免费样品 = 15 个，全部免费）/ Full Pack — everything free
 
 | Skill | 一句话 |
 |---|---|
@@ -59,22 +59,17 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 | dep-guardian | 风险分级依赖升级 + 新依赖准入审查 |
 | legacy-explainer | 数据流式代码解释，结论带 file:line 出处 |
 
-**Pro 版还包含：**
+**完整包还包含：**
 - 📖 **《Claude Code 中文实战手册》（11 章）**——黄金工作流组合（含实战对话示例）、10 个让产出翻倍的提问方式、8 条高频坑解法、场景速查表、**AI 代码八类缺陷核对清单**、**如何写你自己的 Skill（description 公式 + 发布前三测）**、团队三周落地路线
 - ⚡ 一键安装脚本（bash + PowerShell）
 - 🏢 团队部署方案（提交进仓库 `.claude/skills/`，全团队规范自动对齐）
 - 🔄 后续版本更新
 
-### 获取 Pro 包 / Get the Pro Pack
+### 获取完整包 / Get the Pack（免费）
 
-🚚 **完整包已在 [Releases v1.0](../../releases/tag/v1.0) 上线**（密码保护，购买后发送解压密码）。**现在就能买**：在 [issue #1](../../issues/1) 评论「购买 + 中文/英文」，通常几分钟内回复付款方式并发密码（深夜最迟 2 小时）（¥19.9 / $9.9）。🎁 **前 5 份评审拷贝免费**：在 [issue #1](../../issues/1) 评论你的使用场景，换完整 Pro 包 + 一句真实反馈。
+🎉 **2026-09-11 起全部免费**：完整包（15 skills + 11 章中文实战手册 + 安装脚本）在 [Releases v1.0](../../releases/tag/v1.0) 直接下载，无需密码、无需付款。觉得有用的话，star ⭐ 或到 [discussions/2](../../discussions/2) 留一句真实反馈，是对作者最好的支持。
 
-🚀 Shipping now — **star the repo and watch [releases](../../releases)** to get notified. **Buy today**: comment "buy + CN/EN" in [issue #1](../../issues/1) and we reply with payment options and deliver within minutes (2h max in late-night hours) (¥19.9 / $9.9).
-
-### 直接付款（国内）/ Direct Payment
-
-支付宝扫码支付 ¥19.9 → 付款截图发 [issue #1](../../issues/1) 评论 → 通常几分钟内回复解压密码（深夜最迟 2 小时）。
-[<img src="https://hahaknight.github.io/qr/alipay.png" width="240" alt="支付宝收款码 Alipay QR（点击看大图）">](https://hahaknight.github.io/qr/alipay.png)
+🎉 **Everything is free** — grab the full pack (15 skills + 11-chapter handbook + install scripts) from [Releases v1.0](../../releases/tag/v1.0), no password, no payment. A star ⭐ or one line of honest feedback in [discussions/2](../../discussions/2) is the best thanks.
 
 ---
 
@@ -90,4 +85,4 @@ Skills trigger automatically based on what you're doing — describe the intent 
 ## License
 
 - 本仓库免费样品：MIT
-- Pro 包内容：购买者可永久使用，详见商品页
+- 完整包（Releases）：免费下载，可自由使用
