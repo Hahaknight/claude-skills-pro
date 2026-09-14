@@ -44,6 +44,8 @@ npx skills use Hahaknight/claude-skills-pro@pr-reviewer
 
 Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills\` 即可。
 
+> 📦 **装了什么，说清楚**：`npx skills add` / 手动复制 / 免下载试用，安装的都是**仓库内这 7 个 MIT 样品**（`free-skills/` 目录，源码直接可读、可提 PR）。进阶 8 个（security-audit、refactor-surgeon、perf-profiler、api-designer、db-migration-safe 等）+ 11 章中文手册在 [Releases v1.0 完整包](../../releases/tag/v1.0)——同样免费，见下节。
+
 ---
 
 ## 完整包（8 个进阶 + 7 个免费样品 = 15 个，全部免费）/ Full Pack — everything free

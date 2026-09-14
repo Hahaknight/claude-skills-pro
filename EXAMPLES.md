@@ -96,10 +96,10 @@ Verdict: REQUEST CHANGES
 
 ## changelog-release
 
-> 12 个 merged PR → 一份可发布的 Release Notes（semver 由契约变化推出）
+> 输入：`git log v2.3.0..main` + 12 个 merged PR（`gh pr list --state merged`）；运行条件：Conventional Commits 仓库 → 输出：一份可发布的 Release Notes，semver 由契约变化推出
 
 ```
-## [2.4.0] — 2026-08-31
+## [3.0.0] — 2026-08-31
 
 ### ⚠️ Breaking
 - `parseConfig()` now throws on unknown keys (was: silently ignored).
@@ -115,9 +115,10 @@ Verdict: REQUEST CHANGES
 ### 内部改动（不出现在 notes）
 - CI 迁移到新 runner (#400)、重构 utils/constants (#411)
 
-判定：#412 是破坏性契约变化（消费者自动化会挂）→ MAJOR 位递增；
+判定：当前 2.3.x；#412 是破坏性契约变化（消费者自动化会挂）→ MAJOR 位递增，发布 3.0.0；
 #400/#411 无外部行为 → 从用户视角 notes 排除，只在 git log 里存在。
 每条 bullet 带 (#PR)——审阅者核对时是查找，不是重读。
+核验：`npm version major` 生成的 tag v3.0.0 与 notes 标题一致，CHANGELOG.md 已 prepend。
 ```
 
 ---

@@ -22,7 +22,7 @@ Users read release notes to answer one question: "does this affect me, and must 
    - Ambiguous? Ask: "if someone's automation depends on yesterday's behavior, does it break?" Yes → MAJOR.
 3. **Write notes in Keep-a-Changelog shape, impact-ordered**:
    ```markdown
-   ## [2.4.0] — 2026-08-31
+   ## [3.0.0] — 2026-08-31
 
    ### ⚠️ Breaking
    - `parseConfig()` throws on unknown keys (was: silent ignore). Pass `{ strict: false }` for old behavior.
@@ -36,8 +36,9 @@ Users read release notes to answer one question: "does this affect me, and must 
    ### Internal
    - CI matrix adds Node 24
    ```
+   The title is 3.0.0, not 2.4.0: a ⚠️ Breaking entry is a contract break, so MAJOR must move (see step 2).
 4. Rules for each line: verb-first, link the PR/issue, name the config/flag users must know, quantify when possible ("41% faster cold start"). Internal chores go under Internal — or get cut entirely. No "misc improvements", no "stability improvements" without a sentence of substance.
-5. **Tag & attach**: annotated tag (`git tag -a v2.4.0 -m`), push tag, create the GitHub release with these notes (`gh release create`), attach built artifacts if the project ships them.
+5. **Tag & attach**: annotated tag (`git tag -a v3.0.0 -m`), push tag, create the GitHub release with these notes (`gh release create`), attach built artifacts if the project ships them.
 6. **Update files that must not drift**: CHANGELOG.md (prepend), version constant/package.json (`npm version` handles both + tag in one step — prefer it), lockfile, docs URLs pinned to versions.
 
 ## Anti-patterns
