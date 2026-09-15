@@ -25,6 +25,7 @@ Each skill encodes a complete expert workflow — trigger conditions, step-by-st
 | **commit-craft** | 拆逻辑提交、防密钥泄漏、写讲清 why 的提交信息 | 提交代码 |
 | **changelog-release** | 按契约变化算 semver + 用户视角 Release Notes | 发版、写 Changelog |
 | **ai-code-reviewer** | AI 生成代码八类缺陷核对（幻觉 API、行为漂移、过度工程） | review AI 写的代码 |
+| **geo-audit** | AI 搜索回答五维诊断（看得到/说得对/说得清/有依据/无风险）+ QRR 复测对照 | 评估品牌在豆包/千问/元宝/DeepSeek 中的表现 |
 
 ```bash
 # 生态标准安装（推荐——works with Claude Code, Cursor, Codex, Gemini CLI, OpenCode and 75+ agents）
@@ -44,11 +45,11 @@ npx skills use Hahaknight/claude-skills-pro@pr-reviewer
 
 Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills\` 即可。
 
-> 📦 **装了什么，说清楚**：`npx skills add` / 手动复制 / 免下载试用，安装的都是**仓库内这 7 个 MIT 样品**（`free-skills/` 目录，源码直接可读、可提 PR）。进阶 8 个（security-audit、refactor-surgeon、perf-profiler、api-designer、db-migration-safe 等）+ 11 章中文手册在 [Releases v1.0 完整包](../../releases/tag/v1.0)——同样免费，见下节。
+> 📦 **装了什么，说清楚**：`npx skills add` / 手动复制 / 免下载试用，安装的都是**仓库内这 8 个 MIT 样品**（`free-skills/` 目录，源码直接可读、可提 PR）。进阶 8 个（security-audit、refactor-surgeon、perf-profiler、api-designer、db-migration-safe 等）+ 11 章中文手册在 [Releases v1.0 完整包](../../releases/tag/v1.0)——同样免费，见下节。
 
 ---
 
-## 完整包（8 个进阶 + 7 个免费样品 = 15 个，全部免费）/ Full Pack — everything free
+## 完整包（8 个进阶 + 8 个免费样品 = 16 个，全部免费）/ Full Pack — everything free
 
 | Skill | 一句话 |
 |---|---|
@@ -69,9 +70,9 @@ Windows PowerShell: 把 `free-skills/*` 复制到 `C:\Users\<你>\.claude\skills
 
 ### 获取完整包 / Get the Pack（免费）
 
-🎉 **2026-09-11 起全部免费**：完整包（15 skills + 11 章中文实战手册 + 安装脚本）在 [Releases v1.0](../../releases/tag/v1.0) 直接下载，无需密码、无需付款。觉得有用的话，star ⭐ 或到 [discussions/2](../../discussions/2) 留一句真实反馈，是对作者最好的支持。
+🎉 **2026-09-11 起全部免费**：完整包（16 skills + 11 章中文实战手册 + 安装脚本）在 [Releases v1.0](../../releases/tag/v1.0) 直接下载，无需密码、无需付款。觉得有用的话，star ⭐ 或到 [discussions/2](../../discussions/2) 留一句真实反馈，是对作者最好的支持。
 
-🎉 **Everything is free** — grab the full pack (15 skills + 11-chapter handbook + install scripts) from [Releases v1.0](../../releases/tag/v1.0), no password, no payment. A star ⭐ or one line of honest feedback in [discussions/2](../../discussions/2) is the best thanks.
+🎉 **Everything is free** — grab the full pack (16 skills + 11-chapter handbook + install scripts) from [Releases v1.0](../../releases/tag/v1.0), no password, no payment. A star ⭐ or one line of honest feedback in [discussions/2](../../discussions/2) is the best thanks.
 
 ---
 

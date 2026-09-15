@@ -49,7 +49,7 @@ Users read release notes to answer one question: "does this affect me, and must 
 - If notes are empty, the release is empty — don't ship ceremony.
 ---
 
-*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 15 skills in total: 7 MIT samples in-repo plus 8 more in the free full pack (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) and an 11-chapter CN handbook. Everything is free — grab the pack from [Releases](https://github.com/Hahaknight/claude-skills-pro/releases).)*
+*(Part of [claude-skills-pro](https://github.com/Hahaknight/claude-skills-pro) — 16 skills in total: 8 MIT samples in-repo plus 8 more in the free full pack (security-audit, refactor-surgeon, perf-profiler, api-designer, db-migration-safe) and an 11-chapter CN handbook. Everything is free — grab the pack from [Releases](https://github.com/Hahaknight/claude-skills-pro/releases).)*
 
 ## Untrusted input
 

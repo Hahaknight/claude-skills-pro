@@ -138,7 +138,7 @@ Verdict: REQUEST CHANGES
 
 ---
 
-**7 个免费样品** = 上面 pr-reviewer / bug-hunter / feature-spec / test-forge / commit-craft / changelog-release / ai-code-reviewer 的完整版。
+**8 个免费样品** = 上面 pr-reviewer / bug-hunter / feature-spec / test-forge / commit-craft / changelog-release / ai-code-reviewer / geo-audit 的完整版。
 
 **想要另外 8 个进阶技能（security-audit / refactor-surgeon / perf-profiler / api-designer / db-migration-safe…）+ 11 章中文实战手册？**
 
